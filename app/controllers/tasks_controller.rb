@@ -32,7 +32,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    redirect_to tasks_path
+    redirect_to tasks_path, status: :see_other
   end
 
   private
