@@ -1,0 +1,9 @@
+<div class="d-flex">
+<p><strong><%= @task.title %></strong>:</p>
+<p class="ml-2"> <%= @task.details %></p>
+<div class="ml-2"><%= link_to 'edit task', edit_task_path, :class => 'btn btn-primary' %></div>
+</div>
+<p>Your task is: <%= @task.completed ? 'completed' : 'pending' %></p>
+
+
+<%= link_to 'Back to Tasks', tasks_path, class: 'btn btn-success' %>

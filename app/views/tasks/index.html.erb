@@ -1,0 +1,12 @@
+<h1>My Tasks</h1>
+<% checked = " " %>
+<% @tasks.each do |task| %>
+<% checked = "X" if task.completed %>
+<div class="d-flex">
+<li>[<%=checked%>] <%= link_to "#{task.title}", task_path(task) %></li>
+<div class="ml-2"> - <%= link_to 'Delete', destroy_task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} , :class => "btn btn-danger"   %></div>
+</div>
+<% end %>
+
+
+<%= link_to 'Create a new task', new_task_path, class: 'btn btn-success mt-3'  %>
